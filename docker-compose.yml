@@ -1,0 +1,12 @@
+# 本番相当の standalone Hono API サーバーをローカルで確認するための compose。
+# 事前に `pnpm build:server` で dist/ を生成してから:
+#   docker compose up --build  → http://localhost:8787/api/hello
+services:
+  api:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      PORT: 8787
+      HONO_SERVER_NAME: standalone-docker
+      CORS_ORIGIN: "*"

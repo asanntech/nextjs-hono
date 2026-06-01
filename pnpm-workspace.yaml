@@ -1,0 +1,6 @@
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
+# esbuild は tsup（build:server）が利用するためビルドスクリプトの実行を許可する。
+onlyBuiltDependencies:
+  - esbuild
